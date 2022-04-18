@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxg="http://schemas.devexpress.com/xamarin/2014/forms/datagrid" xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="TraderResult.Views.ResultPageView">
+
+    
+    <syncfusion:SfDataGrid x:Name="dataGrid"
+            ColumnSizer="Auto"
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding OperationList}">
+
+        <syncfusion:SfDataGrid.Columns>
+            <syncfusion:GridTextColumn HeaderText="Fecha" 
+                                   MappingName="Date" 
+                                       Format="Date"/>
+
+            <syncfusion:GridTextColumn HeaderText="Market"
+                                   MappingName="Market"/>
+
+            <syncfusion:GridTextColumn HeaderText="Top"
+                                   MappingName="OperationType" />
+
+            <syncfusion:GridTextColumn HeaderText="Entry"
+                                   MappingName="Entry" />
+
+            <syncfusion:GridTextColumn HeaderText="Target"
+                                   MappingName="Target" />
+
+            <syncfusion:GridTextColumn HeaderText="TResult"
+                                   MappingName="TypeResult"/>
+
+
+            <syncfusion:GridTextColumn HeaderText="Result"
+                                   MappingName="Result"/>
+        </syncfusion:SfDataGrid.Columns>
+        
+    </syncfusion:SfDataGrid>
+
+</ContentPage>

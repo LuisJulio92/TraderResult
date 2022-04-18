@@ -1,0 +1,189 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Xamarin\\TraderResult\\TraderResult\\TraderResult.Android\\TraderResult.Android.csproj": {}
+  },
+  "projects": {
+    "D:\\Xamarin\\TraderResult\\TraderResult\\TraderResult.Android\\TraderResult.Android.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Xamarin\\TraderResult\\TraderResult\\TraderResult.Android\\TraderResult.Android.csproj",
+        "projectName": "TraderResult.Android",
+        "projectPath": "D:\\Xamarin\\TraderResult\\TraderResult\\TraderResult.Android\\TraderResult.Android.csproj",
+        "packagesPath": "C:\\Users\\jeron\\.nuget\\packages\\",
+        "outputPath": "D:\\Xamarin\\TraderResult\\TraderResult\\TraderResult.Android\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jeron\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid11.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/NpRAciLnkSeamzXXrpPVTv8p2cT98YYfFbbzySAdsIn5khBXz6/api": {}
+        },
+        "frameworks": {
+          "monoandroid11.0": {
+            "projectReferences": {
+              "D:\\Xamarin\\TraderResult\\TraderResult\\TraderResult\\TraderResult.csproj": {
+                "projectPath": "D:\\Xamarin\\TraderResult\\TraderResult\\TraderResult\\TraderResult.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid11.0": {
+          "dependencies": {
+            "DevExpress.XamarinForms.Grid": {
+              "target": "Package",
+              "version": "[21.2.6, )"
+            },
+            "FirebaseDatabase.net": {
+              "target": "Package",
+              "version": "[4.0.7, )"
+            },
+            "Syncfusion.Licensing": {
+              "target": "Package",
+              "version": "[20.1.0.48, )"
+            },
+            "Syncfusion.Xamarin.SfCalendar": {
+              "target": "Package",
+              "version": "[20.1.0.48, )"
+            },
+            "Syncfusion.Xamarin.SfDataGrid": {
+              "target": "Package",
+              "version": "[20.1.0.48, )"
+            },
+            "Syncfusion.Xamarin.SfMaskedEdit": {
+              "target": "Package",
+              "version": "[20.1.0.48, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.7.2, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.2401, )"
+            },
+            "Xamarin.Forms.PancakeView": {
+              "target": "Package",
+              "version": "[2.3.0.759, )"
+            }
+          }
+        }
+      }
+    },
+    "D:\\Xamarin\\TraderResult\\TraderResult\\TraderResult\\TraderResult.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Xamarin\\TraderResult\\TraderResult\\TraderResult\\TraderResult.csproj",
+        "projectName": "TraderResult",
+        "projectPath": "D:\\Xamarin\\TraderResult\\TraderResult\\TraderResult\\TraderResult.csproj",
+        "packagesPath": "C:\\Users\\jeron\\.nuget\\packages\\",
+        "outputPath": "D:\\Xamarin\\TraderResult\\TraderResult\\TraderResult\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jeron\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/NpRAciLnkSeamzXXrpPVTv8p2cT98YYfFbbzySAdsIn5khBXz6/api": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "DevExpress.XamarinForms.Grid": {
+              "target": "Package",
+              "version": "[21.2.6, )"
+            },
+            "FirebaseDatabase.net": {
+              "target": "Package",
+              "version": "[4.0.7, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Syncfusion.Licensing": {
+              "target": "Package",
+              "version": "[20.1.0.48, )"
+            },
+            "Syncfusion.Xamarin.SfCalendar": {
+              "target": "Package",
+              "version": "[20.1.0.48, )"
+            },
+            "Syncfusion.Xamarin.SfDataGrid": {
+              "target": "Package",
+              "version": "[20.1.0.48, )"
+            },
+            "Syncfusion.Xamarin.SfMaskedEdit": {
+              "target": "Package",
+              "version": "[20.1.0.48, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.7.2, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.2401, )"
+            },
+            "Xamarin.Forms.PancakeView": {
+              "target": "Package",
+              "version": "[2.3.0.759, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

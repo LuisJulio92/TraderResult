@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TraderResult.Views"
+             x:Class="TraderResult.Views.InitialPage"
+             BarTextColor="White"
+             BarBackgroundColor="#355257"
+            SelectedTabColor="Coral">
+  <!--Pages can be added as references or inline-->
+
+    <local:RegisterPageView Title="Registro"
+                            IconImageSource="register.png"/>
+
+    <local:DetailPageView Title="Lista"
+                          IconImageSource="clipboard.png"/>
+
+    <local:ResultPageView Title="Analisis"
+                          IconImageSource="analytics.png"/>
+</TabbedPage>

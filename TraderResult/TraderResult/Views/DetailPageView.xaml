@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:dxg="http://schemas.devexpress.com/xamarin/2014/forms/datagrid" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="TraderResult.Views.DetailPageView">
+
+    <StackLayout Margin="10">
+        <yummy:PancakeView BackgroundGradientStartPoint="0,0" 
+                           BackgroundGradientEndPoint="1,0"
+                           CornerRadius="20">
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+                    <yummy:GradientStop Color="#f5e1ce" Offset="0.1" />
+                    <yummy:GradientStop Color="#ffffff" Offset="0.9" />
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+            
+            <StackLayout HeightRequest="300">
+
+                <Label Text="Resultados Mercado MiniSp500 "
+                       Margin="10"
+                       HorizontalOptions="Center"
+                       TextDecorations="Underline"
+                       FontAttributes="Bold"
+                       FontSize="15"/>
+
+                <StackLayout Margin="30">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition  Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Row="0" Grid.Column="0">
+                            <Label Text="Op Ganadas"
+                                   HorizontalOptions="Center"/>
+                            <Frame CornerRadius="20">
+                                <Label Text="{Binding CountOpGan}"
+                                       HorizontalOptions="Center"/>
+                            </Frame>
+                        </StackLayout>
+
+
+                        <StackLayout Grid.Row="0" Grid.Column="1">
+                            <Label Text="Op Perdidas"
+                                   HorizontalOptions="Center"/>
+                            <Frame CornerRadius="20">
+                                <Label Text="{Binding CountOpLosser}"
+                                       HorizontalOptions="Center"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="0">
+
+                            <Label Text="Op Perdidas"
+                                   HorizontalOptions="Center"/>
+
+                            <Frame CornerRadius="20">
+                                <Label Text="{Binding Promedio}"
+                                       HorizontalOptions="Center"/>
+                                
+                                
+                            </Frame>
+
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="1" >
+
+                            <Label Text="Total de operaciones:"
+                                   HorizontalOptions="Center"/>
+
+                            <Frame CornerRadius="20">
+                                <Label Text="{Binding Promedio}"
+                                       HorizontalOptions="Center"/>
+                            </Frame>
+
+                        </StackLayout>
+
+                       
+                    </Grid>
+                </StackLayout>
+
+                
+
+
+            </StackLayout>
+            
+        </yummy:PancakeView>
+
+    </StackLayout>
+</ContentPage>
