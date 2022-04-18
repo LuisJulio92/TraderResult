@@ -1,69 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" 
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms" 
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="TraderResult.Views.RegisterPageView">
 
 
-    <StackLayout BackgroundColor="Transparent"
-                 Margin="20">
+
+    <Frame Margin="0,20,0,0"
+           HasShadow="True"
+           CornerRadius="15">
+
+
         <StackLayout Margin="20">
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Fecha"
-                       HorizontalOptions="StartAndExpand"
-                       VerticalOptions="Center"
-                       Margin="10,10,0,0"/>
-                <DatePicker HorizontalOptions="FillAndExpand"
-                            HeightRequest="50"
-                            MinimumDate="{Binding CurrentDate}"
-                            Date="{Binding Date, Mode=TwoWay}">
-                    <DatePicker.Format>dd/MM/yyyy</DatePicker.Format>
-                </DatePicker>
-            </StackLayout>
-            
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Mercado a operar"
-                       Margin="10"/>
+            <StackLayout Margin="0,20,0,20"
+                         Orientation="Horizontal">
 
-                <Picker WidthRequest="100"
-                        HorizontalOptions="FillAndExpand"
-                        TitleColor="Black"
-                        Title="Elija Mercado"
-                        SelectedItem="{Binding SelectionMarket}">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Sp500</x:String>
-                            <x:String>Nasqad</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
+
+                <Image Source="trading.png"
+                       Aspect="AspectFill"
+                       Margin="6,0,0,0"/>
+
+                <Label Text="Registra tu operación"
+                       HorizontalOptions="EndAndExpand"
+                       Margin="0,20,7,0"
+                       FontSize="20"/>
 
             </StackLayout>
-             
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Tipo de operación"
-                       Margin="10"/>
-                <Picker WidthRequest="100"
-                        HorizontalOptions="FillAndExpand"
-                        TitleColor="Black"
-                        Title="Operacion a realizar"
-                        SelectedItem="{Binding SelectOperation}">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Venta</x:String>
-                            <x:String>Compra</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                    
-                </Picker>
+
+            <!--#region PickerRegion -->
+            <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="CenterAndExpand">
                 
-            </StackLayout>
+                <StackLayout HorizontalOptions="StartAndExpand"
+                             Margin="0,0,7,0">
+                    <DatePicker HorizontalOptions="FillAndExpand"
+                                    
+                                    MinimumDate="{Binding CurrentDate}"
+                                    Date="{Binding Date, Mode=TwoWay}">
 
-            <StackLayout Orientation="Vertical">
+                        <DatePicker.Format>dd/MM/yyyy</DatePicker.Format>
+
+                    </DatePicker>
+                </StackLayout>
+
+                <StackLayout>
+                    <Picker WidthRequest="100"
+                        HorizontalOptions="CenterAndExpand"
+                        TitleColor="Black"
+                        Title="Mercado"
+                        HorizontalTextAlignment="Center"
+                        SelectedItem="{Binding SelectionMarket}">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Sp500</x:String>
+                                <x:String>Nasqad</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Picker WidthRequest="100"
+                        HorizontalOptions="FillAndExpand"
+                        TitleColor="Black"
+                            HorizontalTextAlignment="Center"
+                        Title="Operación"
+                        SelectedItem="{Binding SelectOperation}">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Venta</x:String>
+                                <x:String>Compra</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+
+                    </Picker>
+
+                </StackLayout>
+            </StackLayout>
+            <!--#endregion-->
+
+            <!--#region EntryRegion -->
+            <StackLayout Orientation="Vertical"
+                         Margin="6,25,6,0">
                 <inputLayout:SfTextInputLayout 
-                    Hint="Entrada a mercado" 
-                    ContainerType="Outlined"
-                    OutlineCornerRadius="20">
+                        Hint="Entrada a mercado:" 
+                        ContainerType="Outlined"
+                        OutlineCornerRadius="10">
 
                     <Entry Keyboard="Numeric"
                            Text="{Binding Entry}"/>
@@ -71,14 +95,17 @@
                 </inputLayout:SfTextInputLayout>
 
                 <inputLayout:SfTextInputLayout 
-                    Hint="Salida a mercado" 
+                    Hint="Salida a mercado:" 
                     ContainerType="Outlined"
-                    OutlineCornerRadius="20">
+                    OutlineCornerRadius="10">
                     <Entry Keyboard="Numeric"
                            Text="{Binding Target}"/>
                 </inputLayout:SfTextInputLayout>
             </StackLayout>
-            <Grid>
+            <!--#endregion-->
+
+            <!--#region ResultRegion -->
+            <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -88,36 +115,38 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Frame CornerRadius="20"
+                <Frame CornerRadius="10"
                        HeightRequest="10"
-                       Margin="0,0,5,0"
+                       Margin="5,0,5,0"
                        HasShadow="False">
                 </Frame>
                 <Label Text="Tipo de resultado:"
                        FontSize="15"
-                       Margin="30,0,0,0"
+                       Margin="5,0,0,0"
                        HorizontalOptions="Start"
                        VerticalOptions="Center"/>
 
-                <Frame CornerRadius="20"
+                <Frame CornerRadius="10"
                        HeightRequest="10"
+                       Margin="5,0,5,0"
                        Grid.Row="1"
                        HasShadow="False">
                 </Frame>
                 <Label Text="Puntos Mercado:"
                        FontSize="15"
-                       Margin="30,0,0,0"
+                       Margin="5,0,0,0"
                        HorizontalOptions="Start"
                        VerticalOptions="Center"
                        Grid.Row="1"/>
 
-                <Frame CornerRadius="20"
+                <Frame CornerRadius="10"
                        HeightRequest="10"
-                       Margin="0,0,5,0"
+                       Margin="5,0,5,0"
                        HasShadow="False"
                        Grid.Row="0"
                        Grid.Column="1">
                 </Frame>
+
                 <Label Text="{Binding TypeResult}"
                        FontSize="15"
                        Margin="30,0,0,0"
@@ -126,8 +155,9 @@
                        Grid.Row="0"
                        Grid.Column="1"/>
 
-                <Frame CornerRadius="20"
+                <Frame CornerRadius="10"
                        HeightRequest="10"
+                       Margin="5,0,5,0"
                        Grid.Row="1"
                        Grid.Column="1"
                        HasShadow="False">
@@ -141,19 +171,26 @@
                        Grid.Row="1"
                        Grid.Column="1"/>
             </Grid>
+            <!--#endregion-->
 
-            <StackLayout Orientation="Horizontal">
+
+            <!--#region RegionButton -->
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         Margin="0,30,0,0">
                 <Button Text="Calcular"
-                        CornerRadius="20"
-                        Margin="0,25"
+                        BackgroundColor="#74959A"
+                        CornerRadius="15"
                         Command="{Binding OperatorCommand}"/>
 
                 <Button Text="Guardar"
-                        CornerRadius="20"
-                        Margin="0,25"
+                        BackgroundColor="#98B4AA"
+                        CornerRadius="15"
                         Command="{Binding SaveCommand}"/>
             </StackLayout>
-            
         </StackLayout>
-    </StackLayout>
+        <!--#endregion-->
+
+
+    </Frame>
 </ContentPage>

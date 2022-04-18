@@ -896,3 +896,4 @@ D:\Xamarin\TraderResult\TraderResult\TraderResult.Android\obj\Debug\110\android\
 D:\Xamarin\TraderResult\TraderResult\TraderResult.Android\obj\Debug\110\android\src\crc64f8908e42fa42e603\PancakeDrawable.java
 D:\Xamarin\TraderResult\TraderResult\TraderResult.Android\obj\Debug\110\android\src\crc64f8908e42fa42e603\PancakeViewRenderer.java
 D:\Xamarin\TraderResult\TraderResult\TraderResult.Android\obj\Debug\110\android\src\crc64f8908e42fa42e603\RoundedCornerOutlineProvider.java
+D:\Xamarin\TraderResult\TraderResult\TraderResult.Android\obj\Debug\110\res\drawable\trading.png

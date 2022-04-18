@@ -92,3 +92,4 @@ D:\Xamarin\TraderResult\TraderResult\TraderResult.iOS\bin\iPhone\Debug\Syncfusio
 D:\Xamarin\TraderResult\TraderResult\TraderResult.iOS\bin\iPhone\Debug\Syncfusion.SfNumericTextBox.XForms.dll
 D:\Xamarin\TraderResult\TraderResult\TraderResult.iOS\bin\iPhone\Debug\Syncfusion.SfNumericTextBox.XForms.iOS.dll
 D:\Xamarin\TraderResult\TraderResult\TraderResult.iOS\bin\iPhone\Debug\Syncfusion.SfNumericTextBox.iOS.dll
+D:\Xamarin\TraderResult\TraderResult\TraderResult.iOS\bin\iPhone\Debug\Xamarin.Forms.PancakeView.dll

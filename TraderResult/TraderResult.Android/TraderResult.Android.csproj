@@ -99,7 +99,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\trading.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TraderResult\TraderResult.csproj">
       <Project>{54B0FBA1-4984-4A6B-806D-A02402000379}</Project>

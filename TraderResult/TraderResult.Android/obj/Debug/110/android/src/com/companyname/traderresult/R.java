@@ -10296,7 +10296,8 @@ public final class R {
     public static final int test_custom_background=0x7f0700ec;
     public static final int tooltip_frame_dark=0x7f0700ed;
     public static final int tooltip_frame_light=0x7f0700ee;
-    public static final int watermark=0x7f0700ef;
+    public static final int trading=0x7f0700ef;
+    public static final int watermark=0x7f0700f0;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

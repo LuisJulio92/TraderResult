@@ -4,16 +4,13 @@
              xmlns:local="clr-namespace:TraderResult.Views"
              x:Class="TraderResult.Views.InitialPage"
              BarTextColor="White"
-             BarBackgroundColor="#355257"
-            SelectedTabColor="Coral">
+             BarBackgroundColor="#495371"
+            >
   <!--Pages can be added as references or inline-->
 
-    <local:RegisterPageView Title="Registro"
-                            IconImageSource="register.png"/>
+    <local:RegisterPageView IconImageSource="register.png"/>
 
-    <local:DetailPageView Title="Lista"
-                          IconImageSource="clipboard.png"/>
+    <local:DetailPageView IconImageSource="clipboard.png"/>
 
-    <local:ResultPageView Title="Analisis"
-                          IconImageSource="analytics.png"/>
+    <local:ResultPageView IconImageSource="analytics.png"/>
 </TabbedPage>

@@ -4,11 +4,12 @@
              xmlns:dxg="http://schemas.devexpress.com/xamarin/2014/forms/datagrid" xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
              x:Class="TraderResult.Views.ResultPageView">
 
-    
+
     <syncfusion:SfDataGrid x:Name="dataGrid"
-            ColumnSizer="Auto"
-            AutoGenerateColumns="False"
-            ItemsSource="{Binding OperationList}">
+                           Margin="20"
+                           ColumnSizer="Auto"
+                           AutoGenerateColumns="False"
+                           ItemsSource="{Binding OperationList}">
 
         <syncfusion:SfDataGrid.Columns>
             <syncfusion:GridTextColumn HeaderText="Fecha" 
@@ -34,7 +35,6 @@
             <syncfusion:GridTextColumn HeaderText="Result"
                                    MappingName="Result"/>
         </syncfusion:SfDataGrid.Columns>
-        
     </syncfusion:SfDataGrid>
 
 </ContentPage>

@@ -127,6 +127,7 @@ namespace TraderResult.ViewModels
             {
                 Total = Convert.ToDecimal(Target) - Convert.ToDecimal(Entry);
                 Result = Total.ToString("N2");
+                
             }
             valid();
         }
@@ -135,6 +136,7 @@ namespace TraderResult.ViewModels
             if (Total < 0)
             {
                 TypeResult = "Perdida";
+                
             }
             else
             {
