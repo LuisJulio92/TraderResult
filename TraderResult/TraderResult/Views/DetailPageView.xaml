@@ -5,10 +5,7 @@
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="TraderResult.Views.DetailPageView">
 
-    <StackLayout  Margin="25,0,25,0">
-
-        
-
+    <StackLayout  Margin="25,35,25,0">
         <!--#region OpTotal -->
         <StackLayout>
             <Label Text="Resumen:"
@@ -18,14 +15,13 @@
 
             <Frame Margin="25,15,25,0"
                    HeightRequest="140"
-                   BackgroundColor="Beige"
                    CornerRadius="20">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="Op Realizadas"
+                    <Label Text="Realizadas"
                            Grid.Column="0"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
@@ -40,61 +36,107 @@
             </Frame>
         </StackLayout><!--#endregion-->
         <!--#region Indicadores -->
-        <StackLayout Margin="27,10,26,0"
-                     >
+        <StackLayout Margin="40,10,26,10"
+                     HeightRequest="50">
             <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-                    <Label Text="Ganadas:"
+                <Label Text="Ganadas:"
                            Grid.Row="0"
                            Grid.Column="0"/>
 
-                    <Label Text="0"
+                <Label Text="0"
                            Grid.Row="0"
                            Grid.Column="1"/>
 
-                    <Label Text="Perdidas:"
+                <Label Text="Perdidas:"
                            Grid.Row="0"
                            Grid.Column="2"
                            HorizontalOptions="Center"/>
 
-                    <Label Text="45"
+                <Label Text="45"
                            Grid.Row="0"
                            Grid.Column="3"
                            HorizontalOptions="CenterAndExpand"/>
 
-                    <Label Text="Promedio"
+                <Label Text="Promedio"
                            Grid.Row="1"
                            Grid.Column="0"/>
 
-                    <Label Text="1.56"
+                <Label Text="1.56"
                            Grid.Row="1"
                            Grid.Column="1"/>
 
-                    <Label Text="Ratio Ga:"
+                <Label Text="Ratio Ga:"
                            Grid.Row="1"
                            Grid.Column="2"
                            HorizontalOptions="CenterAndExpand"/>
 
-                    <Label Text="1.56"
+                <Label Text="1.56"
                            Grid.Row="1"
                            Grid.Column="3"
                            HorizontalOptions="Center"/>
 
-
-                </Grid>
-
+            </Grid>
         </StackLayout>
         <!--#endregion-->
-       
+
+        <!--#region CollectionView -->
+
+        <StackLayout>
+            <Label Text="Top 3 Mejores operaciones"
+                   HorizontalOptions="Center"/>
+        </StackLayout>
+        <Frame HeightRequest="100"
+               Margin="27,15,26,0"
+               >
+            <CollectionView ItemsSource="{Binding TopThreeG, Mode=TwoWay}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Margin="0,3,0,0"
+                                     HorizontalOptions="CenterAndExpand">
+
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Date}"
+                                       />
+
+                                <Label Text="{Binding OperationType}"
+                      
+                                       Margin="0,0,10,0"
+                                       Grid.Column="1"/>
+                                <Label Text="{Binding Market}"                                 
+                                       Margin="0,0,10,0"
+                                       Grid.Column="2"/>
+
+                                <Label Text="{Binding Result}"
+
+                                       Margin="0,0,10,0"
+                                       Grid.Column="3"/>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
+
+
+
+        <!--#endregion-->
     </StackLayout>
 </ContentPage>

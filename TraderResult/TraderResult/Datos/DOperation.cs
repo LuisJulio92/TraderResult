@@ -15,11 +15,13 @@ namespace TraderResult.Datos
 {
     public class DOperation
     {
+        #region Variables
         int Contador;
         int CountLosser;
-        
         decimal sumaM;
+        #endregion
 
+        #region Methods
         public async Task InsertOperation(Operation parametros)
         {
             await Cconection.firebase
@@ -35,23 +37,22 @@ namespace TraderResult.Datos
                     Result = parametros.Result
                 });
         }
-
         public async Task<List<Operation>> ShowOperation()
         {
-             return (await Cconection.firebase
-                .Child("Operation")
-                .OnceAsync<Operation>())
-                .Select(item => new Operation
-                {
-                    IdOperation = item.Key,
-                    Date = item.Object.Date,
-                    OperationType = item.Object.OperationType,
-                    Market = item.Object.Market,
-                    Entry = item.Object.Entry,
-                    Target = item.Object.Target,
-                    TypeResult = item.Object.TypeResult,
-                    Result = item.Object.Result
-                }).ToList();
+            return (await Cconection.firebase
+               .Child("Operation")
+               .OnceAsync<Operation>())
+               .Select(item => new Operation
+               {
+                   IdOperation = item.Key,
+                   Date = item.Object.Date,
+                   OperationType = item.Object.OperationType,
+                   Market = item.Object.Market,
+                   Entry = item.Object.Entry,
+                   Target = item.Object.Target,
+                   TypeResult = item.Object.TypeResult,
+                   Result = item.Object.Result
+               }).ToList();
 
 
             //var data = await Task.Run(() => Cconection.firebase
@@ -60,7 +61,7 @@ namespace TraderResult.Datos
             //    .AsObservableCollection());
             //return data;
         }
-        public async Task<int>CountOperationG()
+        public async Task<int> CountOperationG()
         {
             var data = (await Cconection.firebase
                 .Child("Operation")
@@ -69,7 +70,7 @@ namespace TraderResult.Datos
                 {
                     TypeResult = item.Object.TypeResult,
                     Market = item.Object.Market
-                    
+
                 }).Where(a => a.TypeResult == "Ganada" && a.Market == "Sp500");
 
             int total = 0;
@@ -94,7 +95,6 @@ namespace TraderResult.Datos
             CountLosser = total;
             return CountLosser;
         }
-       
         public async Task<decimal> SumOperationSp()
         {
             var data = (await Cconection.firebase
@@ -106,11 +106,32 @@ namespace TraderResult.Datos
                     Market = item.Object.Market
 
                 }).Where(a => a.Market == "Sp500");
-            
+
             decimal total = 0;
             total = data.Sum(a => Convert.ToDecimal(a.Result));
             sumaM = total;
             return sumaM;
         }
+
+        public async Task<List<Operation>> TopOperation()
+        {
+            var data = (await Cconection.firebase
+                .Child("Operation")
+                .OnceAsync<Operation>())
+                .Where(x => x.Object.TypeResult == "Ganada")
+                .OrderByDescending(a => a.Object.Result)
+                .Take(3)
+                .Select(item => new Operation
+                {
+                    Date = item.Object.Date,
+                    OperationType = item.Object.OperationType,
+                    Market = item.Object.Market,
+                    TypeResult = item.Object.TypeResult,
+                    Result = item.Object.Result
+                }).ToList();
+            return data;
+        }
+        #endregion
+
     }
 }
