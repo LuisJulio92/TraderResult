@@ -11,10 +11,10 @@ namespace TraderResult.ViewModels
 {
     public class ResultPageViewModel : BaseViewModel
     {
-        public ResultPageViewModel(INavigation navigation)
+        public  ResultPageViewModel(INavigation navigation)
         {
             Navigation = navigation;
-             ShowOperation();
+            _ = ShowOperation();
         }
 
 

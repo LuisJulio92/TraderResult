@@ -95,6 +95,7 @@ namespace TraderResult.Datos
             CountLosser = total;
             return CountLosser;
         }
+        
         public async Task<decimal> SumOperationSp()
         {
             var data = (await Cconection.firebase
@@ -102,10 +103,12 @@ namespace TraderResult.Datos
                 .OnceAsync<Operation>())
                 .Select(item => new Operation
                 {
+                    Market = item.Object.Market,
                     Result = item.Object.Result,
-                    Market = item.Object.Market
+                    TypeResult = item.Object.TypeResult
+                    
 
-                }).Where(a => a.Market == "Sp500");
+                }).Where(a => a.Market == "Sp500" && a.TypeResult =="Ganado");
 
             decimal total = 0;
             total = data.Sum(a => Convert.ToDecimal(a.Result));

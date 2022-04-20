@@ -13,10 +13,10 @@ namespace TraderResult.ViewModels
         public DetailPageViewModel(INavigation navigation)
         {
             Navigation = navigation;
-            OperationCount();
-            OperationCountLosser();
-            SumSp();
-            TopThreg();
+            _ = OperationCount();
+            _ = OperationCountLosser();
+            _ = SumSp();
+            _ = TopThreg();
         }
 
         #region Propertys
@@ -48,6 +48,12 @@ namespace TraderResult.ViewModels
             get { return topThreeG; }
             set { SetValue(ref topThreeG, value); }
         }
+
+        public async Task TopThreg()
+        {
+            var funtion = new DOperation();
+            TopThreeG = await funtion.TopOperation();
+        }
         #endregion
 
 
@@ -60,26 +66,22 @@ namespace TraderResult.ViewModels
             CountOpLosser = await funcion.CountOperationP();
             return CountOpLosser;
         }
-
         public async Task<int> OperationCount()
         {
             var funcion = new DOperation();
             CountOpGan = await funcion.CountOperationG();
             return CountOpGan;
         }
-
+        
         public async Task<decimal> SumSp()
         {
             var funcion = new DOperation();
             Promedio = await funcion.SumOperationSp();
             return Promedio;
         }
-
-        public async Task TopThreg()
-        {
-           var funtion = new DOperation();
-           TopThreeG = await funtion.TopOperation();
-        }
+        
+        
+       
 
         #endregion
 

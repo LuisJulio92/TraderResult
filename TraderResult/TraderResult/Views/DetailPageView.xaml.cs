@@ -26,6 +26,7 @@ namespace TraderResult.Views
             await vm.OperationCountLosser();
             await vm.OperationCount();
             await vm.SumSp();
+            await vm.TopThreg();
         }
     }
 }

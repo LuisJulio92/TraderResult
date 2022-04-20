@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" 
              xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms" 
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             x:Class="TraderResult.Views.RegisterPageView">
+             x:Class="TraderResult.Views.RegisterPageView"
+             BackgroundColor="White">
 
 
 
-    <Frame Margin="0,20,0,0"
-           HasShadow="True"
+    <Frame Margin="25,35,25,0"
+           HasShadow="False"
            CornerRadius="15">
 
 
@@ -36,9 +37,8 @@
                 <StackLayout HorizontalOptions="StartAndExpand"
                              Margin="0,0,7,0">
                     <DatePicker HorizontalOptions="FillAndExpand"
-                                    
-                                    MinimumDate="{Binding CurrentDate}"
-                                    Date="{Binding Date, Mode=TwoWay}">
+                                MinimumDate="{Binding CurrentDate}"
+                                Date="{Binding Date, Mode=TwoWay}">
 
                         <DatePicker.Format>dd/MM/yyyy</DatePicker.Format>
 

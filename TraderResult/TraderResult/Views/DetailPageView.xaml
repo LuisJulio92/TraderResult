@@ -4,8 +4,10 @@
              xmlns:dxg="http://schemas.devexpress.com/xamarin/2014/forms/datagrid"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="TraderResult.Views.DetailPageView">
-
-    <StackLayout  Margin="25,35,25,0">
+    
+    
+    <StackLayout  Margin="25,35,5,0"
+                  BackgroundColor="White">
         <!--#region OpTotal -->
         <StackLayout>
             <Label Text="Resumen:"
@@ -15,29 +17,31 @@
 
             <Frame Margin="25,15,25,0"
                    HeightRequest="140"
-                   CornerRadius="20">
+                   CornerRadius="20"
+                   BackgroundColor="#E8F7FF">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="Realizadas"
+                    <Label Text="Realizadas:"
                            Grid.Column="0"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
                            FontSize="25"/>
 
-                    <Label Text="45"
+                    <Label Text="4"
                            Grid.Column="1"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
-                           FontSize="40"/>
+                           FontSize="25"/>
                 </Grid>
             </Frame>
         </StackLayout><!--#endregion-->
         <!--#region Indicadores -->
-        <StackLayout Margin="40,10,26,10"
-                     HeightRequest="50">
+        <StackLayout Margin="40,20,26,10"
+                     HeightRequest="50"
+                     >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -54,7 +58,7 @@
                            Grid.Row="0"
                            Grid.Column="0"/>
 
-                <Label Text="0"
+                <Label Text="{Binding CountOpGan}"
                            Grid.Row="0"
                            Grid.Column="1"/>
 
@@ -63,7 +67,7 @@
                            Grid.Column="2"
                            HorizontalOptions="Center"/>
 
-                <Label Text="45"
+                <Label Text="{Binding CountOpLosser}"
                            Grid.Row="0"
                            Grid.Column="3"
                            HorizontalOptions="CenterAndExpand"/>
@@ -72,7 +76,7 @@
                            Grid.Row="1"
                            Grid.Column="0"/>
 
-                <Label Text="1.56"
+                <Label Text="{Binding Promedio}"
                            Grid.Row="1"
                            Grid.Column="1"/>
 
@@ -98,13 +102,13 @@
         </StackLayout>
         <Frame HeightRequest="100"
                Margin="27,15,26,0"
-               >
-            <CollectionView ItemsSource="{Binding TopThreeG, Mode=TwoWay}">
+               CornerRadius="10"
+               BackgroundColor="#F8FDFF">
+            <CollectionView ItemsSource="{Binding TopThreeG}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Margin="0,3,0,0"
                                      HorizontalOptions="CenterAndExpand">
-
 
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -113,8 +117,7 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Text="{Binding Date}"
-                                       />
+                                <Label Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}"/>
 
                                 <Label Text="{Binding OperationType}"
                       

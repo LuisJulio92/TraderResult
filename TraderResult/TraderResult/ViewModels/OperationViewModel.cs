@@ -16,7 +16,7 @@ namespace TraderResult.ViewModels
         public OperationViewModel(INavigation navigation)
         {
             Navigation = navigation;
-            CurrentDate = DateTime.Now.ToString();
+            CurrentDate = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         #region Propertys
@@ -160,8 +160,6 @@ namespace TraderResult.ViewModels
             
         }
         #endregion
-
-
         #region Commands
         public ICommand OperatorCommand => new Command(() => Operator());
         public ICommand SaveCommand => new Command(async () => await SaveOperator());

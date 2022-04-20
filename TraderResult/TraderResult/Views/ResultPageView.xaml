@@ -13,7 +13,7 @@
 
         <syncfusion:SfDataGrid.Columns>
             <syncfusion:GridTextColumn HeaderText="Fecha" 
-                                   MappingName="Date" 
+                                       MappingName="Date" 
                                        Format="Date"/>
 
             <syncfusion:GridTextColumn HeaderText="Market"
