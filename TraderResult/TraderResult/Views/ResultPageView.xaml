@@ -1,43 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:dxg="http://schemas.devexpress.com/xamarin/2014/forms/datagrid" xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:dxg="http://schemas.devexpress.com/xamarin/2014/forms/datagrid"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
              x:Class="TraderResult.Views.ResultPageView"
              Title="Resulview"
              BackgroundColor="White">
 
-
-    <syncfusion:SfDataGrid x:Name="dataGrid"
-                           Margin="0,100,0,0"
-                           ColumnSizer="Auto"
-                           AutoGenerateColumns="False"
-                           ItemsSource="{Binding OperationList}">
-
+    <StackLayout Margin="0,90,0,0">
         
-        <syncfusion:SfDataGrid.Columns>
-            <syncfusion:GridTextColumn HeaderText="Fecha" 
-                                       MappingName="Date" 
-                                       Format="Date"/>
+        <StackLayout Margin="30,17,0,20">
+            <Label Text="Tabla de operaciones:"
+                   FontFamily="fontc.ttf"
+                   FontSize="25"
+                   />
+        </StackLayout>
+        
+        <dxg:DataGridView x:Name="grid"
+                          Margin="15"
+                          ItemsSource="{Binding OperationList}">
 
-            <syncfusion:GridTextColumn HeaderText="Market"
-                                   MappingName="Market"/>
+            <dxg:DataGridView.ColumnHeaderStyle>
+                <dxg:ColumnHeaderStyle FontSize="15"
+                                       FontAttributes="Bold" 
+                                       FontFamily="fontc.ttf"
+                                       HorizontalLineThickness="2"/>
+            </dxg:DataGridView.ColumnHeaderStyle>
 
-            <syncfusion:GridTextColumn HeaderText="Top"
-                                   MappingName="OperationType" />
+            <dxg:TextColumn FieldName="Date" 
+                            Caption="Date" 
+                            Width="100"
+                            FontFamily="fontc.ttf"
+                            />
+            
+            <dxg:TextColumn FieldName="OperationType" 
+                            Caption="OP" 
+                            Width="70"
+                            FontFamily="fontc.ttf"/>
+            
+            <dxg:TextColumn FieldName="Market"
+                            Caption="MK" 
+                            Width="70"
+                            FontFamily="fontc.ttf"/>
+            
+            <dxg:TextColumn FieldName="TypeResult"
+                            Caption="TP" 
+                            Width="65"
+                            FontFamily="fontc.ttf"/>
+            
+            <dxg:TextColumn FieldName="Result" 
+                            Caption="RS" 
+                            Width="80"
+                            FontFamily="fontc.ttf"/>
 
-            <syncfusion:GridTextColumn HeaderText="Entry"
-                                   MappingName="Entry" />
-
-            <syncfusion:GridTextColumn HeaderText="Target"
-                                   MappingName="Target" />
-
-            <syncfusion:GridTextColumn HeaderText="TResult"
-                                   MappingName="TypeResult"/>
-
-
-            <syncfusion:GridTextColumn HeaderText="Result"
-                                   MappingName="Result"/>
-        </syncfusion:SfDataGrid.Columns>
-    </syncfusion:SfDataGrid>
-
+        </dxg:DataGridView>
+    </StackLayout>
+    
 </ContentPage>

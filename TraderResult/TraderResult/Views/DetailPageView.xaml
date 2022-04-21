@@ -7,7 +7,7 @@
              BackgroundColor="White">
     
     
-    <StackLayout  Margin="15,35,15,0"
+    <StackLayout  Margin="20,35,15,0"
                   BackgroundColor="White">
         <!--#region OpTotal -->
         <StackLayout>
@@ -18,8 +18,7 @@
 
             <Frame Margin="25,25,25,0"
                    HeightRequest="140"
-                   CornerRadius="20"
-                   BackgroundColor="#E8F7FF">
+                   CornerRadius="20">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -107,14 +106,14 @@
 
         <StackLayout>
             <Label Text="Top 3 Mejores operaciones"
-                   Margin="0,15,0,0"
+                   Margin="0,20,0,0"
                    HorizontalOptions="Center"
                    Style="{StaticResource titleFont}"/>
         </StackLayout>
         
         <Frame HeightRequest="100"
                CornerRadius="10"
-               Margin="10,0,10,0">
+               Margin="19,20,19,0">
             <CollectionView ItemsSource="{Binding TopThreeG}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
