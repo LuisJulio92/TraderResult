@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" 
              xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms" 
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="TraderResult.Views.RegisterPageView"
@@ -13,12 +14,11 @@
            CornerRadius="15">
 
 
-        <StackLayout Margin="20">
+        <StackLayout Margin="10">
 
             <StackLayout Margin="0,20,0,20"
                          Orientation="Horizontal">
-
-
+                
                 <Image Source="trading.png"
                        Aspect="AspectFill"
                        Margin="6,0,0,0"/>
@@ -26,7 +26,7 @@
                 <Label Text="Registra tu operación"
                        HorizontalOptions="EndAndExpand"
                        Margin="0,20,7,0"
-                       FontSize="20"/>
+                       Style="{StaticResource titleFont}"/>
 
             </StackLayout>
 
@@ -38,7 +38,8 @@
                              Margin="0,0,7,0">
                     <DatePicker HorizontalOptions="FillAndExpand"
                                 MinimumDate="{Binding CurrentDate}"
-                                Date="{Binding Date, Mode=TwoWay}">
+                                Date="{Binding Date, Mode=TwoWay}"
+                                Style="{StaticResource datapikerFont}">
 
                         <DatePicker.Format>dd/MM/yyyy</DatePicker.Format>
 
@@ -51,7 +52,8 @@
                         TitleColor="Black"
                         Title="Mercado"
                         HorizontalTextAlignment="Center"
-                        SelectedItem="{Binding SelectionMarket}">
+                        SelectedItem="{Binding SelectionMarket}"
+                            Style="{StaticResource pikerfont}">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>Sp500</x:String>
@@ -63,11 +65,12 @@
 
                 <StackLayout Orientation="Horizontal">
                     <Picker WidthRequest="100"
-                        HorizontalOptions="FillAndExpand"
-                        TitleColor="Black"
+                            HorizontalOptions="FillAndExpand"
+                            TitleColor="Black"
                             HorizontalTextAlignment="Center"
-                        Title="Operación"
-                        SelectedItem="{Binding SelectOperation}">
+                            Title="Operación"
+                            SelectedItem="{Binding SelectOperation}"
+                            Style="{StaticResource pikerfont}">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>Venta</x:String>
@@ -90,8 +93,18 @@
                         OutlineCornerRadius="10">
 
                     <Entry Keyboard="Numeric"
-                           Text="{Binding Entry}"/>
+                           Text="{Binding Entry}"
+                           />
 
+                    <inputLayout:SfTextInputLayout.HintLabelStyle>
+                        <inputLayout:LabelStyle FontSize="17">
+                            <inputLayout:LabelStyle.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String" 
+                                            iOS="Lobster-Regular" 
+                                            Android="fontc.ttf"/>
+                            </inputLayout:LabelStyle.FontFamily>
+                        </inputLayout:LabelStyle>
+                    </inputLayout:SfTextInputLayout.HintLabelStyle>
                 </inputLayout:SfTextInputLayout>
 
                 <inputLayout:SfTextInputLayout 
@@ -100,6 +113,16 @@
                     OutlineCornerRadius="10">
                     <Entry Keyboard="Numeric"
                            Text="{Binding Target}"/>
+
+                    <inputLayout:SfTextInputLayout.HintLabelStyle>
+                        <inputLayout:LabelStyle FontSize="17">
+                            <inputLayout:LabelStyle.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String" 
+                                            iOS="Lobster-Regular" 
+                                            Android="fontc.ttf"/>
+                            </inputLayout:LabelStyle.FontFamily>
+                        </inputLayout:LabelStyle>
+                    </inputLayout:SfTextInputLayout.HintLabelStyle>
                 </inputLayout:SfTextInputLayout>
             </StackLayout>
             <!--#endregion-->
@@ -121,10 +144,10 @@
                        HasShadow="False">
                 </Frame>
                 <Label Text="Tipo de resultado:"
-                       FontSize="15"
                        Margin="5,0,0,0"
                        HorizontalOptions="Start"
-                       VerticalOptions="Center"/>
+                       VerticalOptions="Center"
+                       Style="{StaticResource ResultFont}"/>
 
                 <Frame CornerRadius="10"
                        HeightRequest="10"
@@ -133,11 +156,11 @@
                        HasShadow="False">
                 </Frame>
                 <Label Text="Puntos Mercado:"
-                       FontSize="15"
                        Margin="5,0,0,0"
                        HorizontalOptions="Start"
                        VerticalOptions="Center"
-                       Grid.Row="1"/>
+                       Grid.Row="1"
+                       Style="{StaticResource ResultFont}"/>
 
                 <Frame CornerRadius="10"
                        HeightRequest="10"
@@ -148,12 +171,12 @@
                 </Frame>
 
                 <Label Text="{Binding TypeResult}"
-                       FontSize="15"
                        Margin="30,0,0,0"
                        HorizontalOptions="Start"
                        VerticalOptions="Center"
                        Grid.Row="0"
-                       Grid.Column="1"/>
+                       Grid.Column="1"
+                       Style="{StaticResource ResultFont}"/>
 
                 <Frame CornerRadius="10"
                        HeightRequest="10"
@@ -163,13 +186,13 @@
                        HasShadow="False">
                 </Frame>
                 <Label Text="{Binding Result}"
-                       FontSize="15"
                        Margin="30,0,0,0"
                        HorizontalOptions="Start"
                        VerticalOptions="Center"
-                       TextColor="Black"
                        Grid.Row="1"
-                       Grid.Column="1"/>
+                       Grid.Column="1"
+                       FontFamily="NB3"
+                       Style="{StaticResource ResultFont}"/>
             </Grid>
             <!--#endregion-->
 
@@ -180,13 +203,15 @@
                          Margin="0,30,0,0">
                 <Button Text="Calcular"
                         BackgroundColor="#74959A"
-                        CornerRadius="15"
-                        Command="{Binding OperatorCommand}"/>
+                        CornerRadius="10"
+                        Command="{Binding OperatorCommand}"
+                        Style="{StaticResource butonfont}"/>
 
                 <Button Text="Guardar"
                         BackgroundColor="#98B4AA"
-                        CornerRadius="15"
-                        Command="{Binding SaveCommand}"/>
+                        CornerRadius="10"
+                        Command="{Binding SaveCommand}"
+                        Style="{StaticResource butonfont}"/>
             </StackLayout>
         </StackLayout>
         <!--#endregion-->

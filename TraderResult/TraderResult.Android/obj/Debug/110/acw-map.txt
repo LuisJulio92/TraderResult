@@ -1,6 +1,9 @@
 TraderResult.Droid.MainActivity, TraderResult.Android;crc646a3c7863221be1ed.MainActivity
 TraderResult.Droid.MainActivity;crc646a3c7863221be1ed.MainActivity
 traderresult.droid.MainActivity;crc646a3c7863221be1ed.MainActivity
+TraderResult.Droid.SplasScreen, TraderResult.Android;crc646a3c7863221be1ed.SplasScreen
+TraderResult.Droid.SplasScreen;crc646a3c7863221be1ed.SplasScreen
+traderresult.droid.SplasScreen;crc646a3c7863221be1ed.SplasScreen
 Com.Devexpress.Dxlistview.IListViewListener, DevExpress.Xamarin.Android.CollectionView;com.devexpress.dxlistview.ListViewListener
 Com.Devexpress.Dxlistview.IListViewListener;com.devexpress.dxlistview.ListViewListener
 com.devexpress.dxlistview.ListViewListener;com.devexpress.dxlistview.ListViewListener

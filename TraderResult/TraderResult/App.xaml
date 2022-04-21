@@ -1,8 +1,133 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             
              x:Class="TraderResult.App">
     <Application.Resources>
+        <ResourceDictionary>
+            
+            <!--#region stylesTitle -->
+            <Style TargetType="Label"
+                   x:Key="titleFont">
 
+                <Setter Property="FontFamily"
+                        Value="NB3"/>
+
+                <Setter Property="FontSize"
+                        Value="25"/>
+            </Style>
+            <!--#endregion-->
+
+
+            <!--#region styles PikersLabels -->
+            <Style TargetType="DatePicker"
+                   x:Key="datapikerFont">
+                
+                <Setter Property="FontFamily"
+                        Value="NB3"/>
+
+                <Setter Property="FontSize"
+                        Value="18"/>
+
+            </Style>
+
+            <Style TargetType="Picker"
+                   x:Key="pikerfont">
+                <Setter Property="FontFamily"
+                        Value="NB3"/>
+
+                <Setter Property="FontSize"
+                        Value="18"/>
+            </Style>
+            
+            <!--#endregion-->
+
+            <!--#region reult -->
+            <Style TargetType="Label"
+                   x:Key="ResultFont">
+                <Setter Property="FontFamily"
+                        Value="NB3"/>
+
+                <Setter Property="FontSize"
+                        Value="17"/>
+            </Style>
+            <!--#endregion-->
+
+            <!--#region reult -->
+            <Style TargetType="Label"
+                   x:Key="butonfont">
+                <Setter Property="FontFamily"
+                        Value="NB3"/>
+
+                <Setter Property="FontSize"
+                        Value="15"/>
+
+            </Style>
+
+            <Style TargetType="Label"
+                   x:Key="ResultFontBold">
+                <Setter Property="FontFamily"
+                        Value="NB3"/>
+
+                <Setter Property="FontSize"
+                        Value="20"/>
+
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+            </Style>
+            <!--#endregion-->
+
+            <!--estilos implicitos-->
+
+            <!--<Style TargetType="Label"
+                   x:Key="fontn3">
+                <Setter Property="FontFamily"
+                        Value="NB3">
+                </Setter>
+                <Setter Property="FontSize"
+                        Value="20">
+                </Setter>
+            </Style>
+            
+            <Style TargetType="Entry"
+                   x:Key="labelEntry">
+                <Setter Property="FontFamily"
+                        Value="NB3">
+                </Setter>
+            </Style>
+
+            <Style TargetType="Picker"
+                   x:Key="pikerFont">
+                
+                <Setter Property="FontFamily"
+                        Value="NB3">
+                </Setter>
+                <Setter Property="FontSize"
+                        Value="20">
+
+                </Setter>
+            </Style>
+
+            <Style TargetType="Picker"
+                   x:Key="DatapikerFont">
+
+                <Setter Property="FontFamily"
+                        Value="NB3">
+                </Setter>
+                <Setter Property="FontSize"
+                        Value="20">
+
+                </Setter>
+            </Style>
+
+            <Style TargetType="Button"
+                   x:Key="buttonFont">
+                <Setter Property="FontFamily"
+                        Value="NB3">
+                    
+                </Setter>
+            </Style>-->
+        </ResourceDictionary>
     </Application.Resources>
-</Application>
+</Application> 

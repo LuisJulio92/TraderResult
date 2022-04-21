@@ -3,19 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:dxg="http://schemas.devexpress.com/xamarin/2014/forms/datagrid"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             x:Class="TraderResult.Views.DetailPageView">
+             x:Class="TraderResult.Views.DetailPageView"
+             BackgroundColor="White">
     
     
-    <StackLayout  Margin="25,35,5,0"
+    <StackLayout  Margin="15,35,15,0"
                   BackgroundColor="White">
         <!--#region OpTotal -->
         <StackLayout>
             <Label Text="Resumen:"
                    Margin="30,65,0,0"
                    HorizontalOptions="StartAndExpand"
-                   FontSize="19"/>
+                   Style="{StaticResource titleFont}"/>
 
-            <Frame Margin="25,15,25,0"
+            <Frame Margin="25,25,25,0"
                    HeightRequest="140"
                    CornerRadius="20"
                    BackgroundColor="#E8F7FF">
@@ -28,13 +29,13 @@
                            Grid.Column="0"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
-                           FontSize="25"/>
+                           Style="{StaticResource titleFont}"/>
 
                     <Label Text="4"
                            Grid.Column="1"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
-                           FontSize="25"/>
+                           Style="{StaticResource titleFont}"/>
                 </Grid>
             </Frame>
         </StackLayout><!--#endregion-->
@@ -55,40 +56,48 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Text="Ganadas:"
-                           Grid.Row="0"
-                           Grid.Column="0"/>
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Style="{StaticResource ResultFont}"/>
 
                 <Label Text="{Binding CountOpGan}"
-                           Grid.Row="0"
-                           Grid.Column="1"/>
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Style="{StaticResource ResultFont}"/>
 
                 <Label Text="Perdidas:"
-                           Grid.Row="0"
-                           Grid.Column="2"
-                           HorizontalOptions="Center"/>
+                       Grid.Row="0"
+                       Grid.Column="2"
+                       HorizontalOptions="Center"
+                       Style="{StaticResource ResultFont}"/>
 
                 <Label Text="{Binding CountOpLosser}"
-                           Grid.Row="0"
-                           Grid.Column="3"
-                           HorizontalOptions="CenterAndExpand"/>
+                       Grid.Row="0"
+                       Grid.Column="3"
+                       HorizontalOptions="CenterAndExpand"
+                       Style="{StaticResource ResultFont}"/>
 
                 <Label Text="Promedio"
-                           Grid.Row="1"
-                           Grid.Column="0"/>
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       Style="{StaticResource ResultFont}"/>
 
                 <Label Text="{Binding Promedio}"
-                           Grid.Row="1"
-                           Grid.Column="1"/>
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Style="{StaticResource ResultFont}"/>
 
                 <Label Text="Ratio Ga:"
-                           Grid.Row="1"
-                           Grid.Column="2"
-                           HorizontalOptions="CenterAndExpand"/>
+                       Grid.Row="1"
+                       Grid.Column="2"
+                       HorizontalOptions="CenterAndExpand"
+                       Style="{StaticResource ResultFont}"/>
 
                 <Label Text="1.56"
-                           Grid.Row="1"
-                           Grid.Column="3"
-                           HorizontalOptions="Center"/>
+                       Grid.Row="1"
+                       Grid.Column="3"
+                       HorizontalOptions="Center"
+                       Style="{StaticResource ResultFont}"/>
 
             </Grid>
         </StackLayout>
@@ -98,39 +107,52 @@
 
         <StackLayout>
             <Label Text="Top 3 Mejores operaciones"
-                   HorizontalOptions="Center"/>
+                   Margin="0,15,0,0"
+                   HorizontalOptions="Center"
+                   Style="{StaticResource titleFont}"/>
         </StackLayout>
+        
         <Frame HeightRequest="100"
-               Margin="27,15,26,0"
                CornerRadius="10"
-               BackgroundColor="#F8FDFF">
+               Margin="10,0,10,0">
             <CollectionView ItemsSource="{Binding TopThreeG}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Margin="0,3,0,0"
-                                     HorizontalOptions="CenterAndExpand">
+                        <StackLayout HorizontalOptions="Center"
+                                     Margin="0,0,0,0">
 
-                            <Grid>
+                            <Grid 
+                                  Margin="10,6,0,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="70"/>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}"/>
+                                
+                                <Label Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}"
+                                       Style="{StaticResource ResultFont}"
+                                       HorizontalOptions="CenterAndExpand"
+                                       Margin="5,0,0,0"/>
 
                                 <Label Text="{Binding OperationType}"
-                      
-                                       Margin="0,0,10,0"
-                                       Grid.Column="1"/>
+                                       
+                                       Grid.Column="1"
+                                       Style="{StaticResource ResultFont}"
+                                       Margin="9,0,0,0"
+                                       />
+                                
                                 <Label Text="{Binding Market}"                                 
-                                       Margin="0,0,10,0"
-                                       Grid.Column="2"/>
+                                       Margin="9,0,0,0"
+                                       Grid.Column="2"
+                                       Style="{StaticResource ResultFont}"
+                                       />
 
                                 <Label Text="{Binding Result}"
-
-                                       Margin="0,0,10,0"
-                                       Grid.Column="3"/>
+                                       Style="{StaticResource ResultFont}"
+                                       Margin="9,0,0,0"
+                                       Grid.Column="3"
+                                       />
                             </Grid>
                         </StackLayout>
                     </DataTemplate>

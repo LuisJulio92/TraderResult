@@ -11,7 +11,8 @@
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <application android:label="TraderResult.Android" android:theme="@style/MainTheme" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true" android:extractNativeLibs="true">
-    <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="TraderResult" android:theme="@style/MainTheme" android:name="crc646a3c7863221be1ed.MainActivity" android:exported="true">
+    <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="TraderResult" android:theme="@style/MainTheme" android:name="crc646a3c7863221be1ed.MainActivity" />
+    <activity android:configChanges="screenSize" android:icon="@mipmap/icon" android:label="SplasScreen" android:theme="@style/newtheme" android:name="crc646a3c7863221be1ed.SplasScreen" android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
