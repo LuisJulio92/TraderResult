@@ -2,7 +2,6 @@ D:\Xamarin\TraderResult\TraderResult\TraderResult\bin\Debug\netstandard2.0\Trade
 D:\Xamarin\TraderResult\TraderResult\TraderResult\bin\Debug\netstandard2.0\TraderResult.dll
 D:\Xamarin\TraderResult\TraderResult\TraderResult\bin\Debug\netstandard2.0\ref\TraderResult.dll
 D:\Xamarin\TraderResult\TraderResult\TraderResult\bin\Debug\netstandard2.0\TraderResult.pdb
-D:\Xamarin\TraderResult\TraderResult\TraderResult\obj\Debug\netstandard2.0\TraderResult.csproj.AssemblyReference.cache
 D:\Xamarin\TraderResult\TraderResult\TraderResult\obj\Debug\netstandard2.0\TraderResult.GeneratedMSBuildEditorConfig.editorconfig
 D:\Xamarin\TraderResult\TraderResult\TraderResult\obj\Debug\netstandard2.0\App.xaml.g.cs
 D:\Xamarin\TraderResult\TraderResult\TraderResult\obj\Debug\netstandard2.0\MainPage.xaml.g.cs

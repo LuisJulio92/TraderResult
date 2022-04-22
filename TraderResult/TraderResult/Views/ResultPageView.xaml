@@ -7,7 +7,7 @@
              Title="Resulview"
              BackgroundColor="White">
 
-    <StackLayout Margin="0,90,0,0">
+    <StackLayout Margin="0,85,0,0">
         
         <StackLayout Margin="30,17,0,20">
             <Label Text="Tabla de operaciones:"

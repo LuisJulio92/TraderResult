@@ -7,7 +7,7 @@
              BackgroundColor="White">
     
     
-    <StackLayout  Margin="20,35,15,0"
+    <StackLayout  Margin="15,39,15,0"
                   BackgroundColor="White">
         <!--#region OpTotal -->
         <StackLayout>
@@ -30,7 +30,7 @@
                            VerticalOptions="Center"
                            Style="{StaticResource titleFont}"/>
 
-                    <Label Text="4"
+                    <Label Text="{Binding SumAllOperationS}"
                            Grid.Column="1"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"

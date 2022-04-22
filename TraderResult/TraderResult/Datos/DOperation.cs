@@ -19,6 +19,7 @@ namespace TraderResult.Datos
         int Contador;
         int CountLosser;
         decimal sumaM;
+        int CountAllOperatoin;
         #endregion
 
         #region Methods
@@ -95,26 +96,43 @@ namespace TraderResult.Datos
             CountLosser = total;
             return CountLosser;
         }
-        
-        public async Task<decimal> SumOperationSp()
+
+        public async Task<int> TotalOperation()
         {
             var data = (await Cconection.firebase
                 .Child("Operation")
                 .OnceAsync<Operation>())
                 .Select(item => new Operation
                 {
-                    Market = item.Object.Market,
-                    Result = item.Object.Result,
-                    TypeResult = item.Object.TypeResult
+                    TypeResult = item.Object.TypeResult,
+
+                });
+
+            int total = 0;
+            total = data.Count();
+            CountAllOperatoin = total;
+            return CountAllOperatoin;
+        }
+
+        //public async Task<decimal> SumOperationSp()
+        //{
+        //    var data = (await Cconection.firebase
+        //        .Child("Operation")
+        //        .OnceAsync<Operation>())
+        //        .Select(item => new Operation
+        //        {
+        //            Market = item.Object.Market,
+        //            Result = item.Object.Result,
+        //            TypeResult = item.Object.TypeResult
                     
 
-                }).Where(a => a.Market == "Sp500" && a.TypeResult =="Ganado");
+        //        }).Where(a => a.Market == "Sp500" && a.TypeResult =="Ganado");
 
-            decimal total = 0;
-            total = data.Sum(a => Convert.ToDecimal(a.Result));
-            sumaM = total;
-            return sumaM;
-        }
+        //    decimal total = 0;
+        //    total = data.Sum(a => Convert.ToDecimal(a.Result));
+        //    sumaM = total;
+        //    return sumaM;
+        //}
 
         public async Task<List<Operation>> TopOperation()
         {

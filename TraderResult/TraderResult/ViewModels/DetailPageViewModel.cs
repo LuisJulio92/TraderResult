@@ -15,8 +15,9 @@ namespace TraderResult.ViewModels
             Navigation = navigation;
             _ = OperationCount();
             _ = OperationCountLosser();
-            _ = SumSp();
+            //_ = SumSp();
             _ = TopThreg();
+            _ = SumAllOperation();
         }
 
         #region Propertys
@@ -34,12 +35,12 @@ namespace TraderResult.ViewModels
             set { SetValue(ref countOpLosser, value); }
         }
 
-        private decimal promedio;
-        public decimal Promedio
-        {
-            get { return promedio; }
-            set { SetValue(ref promedio, value); }
-        }
+        //private decimal promedio;
+        //public decimal Promedio
+        //{
+        //    get { return promedio; }
+        //    set { SetValue(ref promedio, value); }
+        //}
 
 
         private List<Operation> topThreeG;
@@ -53,6 +54,14 @@ namespace TraderResult.ViewModels
         {
             var funtion = new DOperation();
             TopThreeG = await funtion.TopOperation();
+        }
+
+        private int sumAllOperationS;
+        
+        public int SumAllOperationS
+        {
+            get { return sumAllOperationS; }
+            set { SetValue(ref sumAllOperationS, value); }
         }
         #endregion
 
@@ -73,15 +82,21 @@ namespace TraderResult.ViewModels
             return CountOpGan;
         }
         
-        public async Task<decimal> SumSp()
+        //public async Task<decimal> SumSp()
+        //{
+        //    var funcion = new DOperation();
+        //    Promedio = await funcion.SumOperationSp();
+        //    return Promedio;
+        //}
+
+
+        public async Task<int> SumAllOperation()
         {
             var funcion = new DOperation();
-            Promedio = await funcion.SumOperationSp();
-            return Promedio;
+            SumAllOperationS = await funcion.TotalOperation();
+            return SumAllOperationS;
         }
-        
-        
-       
+
 
         #endregion
 

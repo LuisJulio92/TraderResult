@@ -205,13 +205,15 @@
                         BackgroundColor="#74959A"
                         CornerRadius="10"
                         Command="{Binding OperatorCommand}"
-                        Style="{StaticResource butonfont}"/>
+                        Style="{StaticResource butonfont}"
+                        TextColor="White"/>
 
                 <Button Text="Guardar"
                         BackgroundColor="#98B4AA"
                         CornerRadius="10"
                         Command="{Binding SaveCommand}"
-                        Style="{StaticResource butonfont}"/>
+                        Style="{StaticResource butonfont}"
+                        TextColor="White"/>
             </StackLayout>
         </StackLayout>
         <!--#endregion-->
